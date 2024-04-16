@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "deid-doc"
+version = "0.1.0"
+description = ""
+authors = ["Giulia Baldini <Giulia.Baldini@uk-essen.de>", "Kamyar Arzideh <Kamyar.Arzideh@uk-essen.de>"]
+packages = [
+    { include = "deid_doc" },
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+transformers = "^4.19.2"
+datasets = "2.2.2"
+dkpro-cassis = "^0.7.2"
+
+openpyxl = { version = "^3.0.10", optional = true }
+fhir-pyrate = {git = "https://github.com/UMEssen/FHIR-PYrate.git", branch = "main", optional = true}
+wandb = { version = "^0.13.3", optional = true }
+tensorboardX = { version = "^2.5", optional = true }
+seqeval = { version = "^1.2.2", optional = true }
+python-dotenv = { version = "^0.20.0", optional = true }
+
+
+[tool.poetry.dev-dependencies]
+pre-commit = "^2.14.0"
+flake8 = "3.9.2"
+mypy = "0.910"
+black = "^22.3.0"
+jupyter = "^1.0.0"
+
+[tool.poetry.extras]
+train = ["fhir-pyrate", "openpyxl", "wandb", "tensorboardX", "seqeval", "python-dotenv"]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[virtualenvs]
+create = true
+in-project = true
+
+[tool.isort]
+profile = "black"
+line_length = 88

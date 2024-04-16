@@ -1,0 +1,40 @@
+PHI:
+  AGE:
+    AGE: replace
+  DATE:
+    DATE: replace
+    BIRTHDATE: replace
+  CONTACT:
+    PHONE: replace
+    FAX: replace
+    EMAIL: replace
+    URL: replace
+    IPADDRESS: replace
+  ID:
+    PATIENTID: replace
+    STUDYID: replace
+    OTHER: replace
+  LOCATION:
+    ORGANIZATION: replace
+    HOSPITAL: replace
+    STREET: replace
+    CITY: replace
+    ZIP: replace
+    COUNTRY: replace
+    STATE: replace
+    OTHER: replace
+  NAME:
+    PATIENT: replace
+    STAFF: replace
+    OTHER: replace
+  PROFESSION:
+    PROFESSION: replace
+    STATUS: replace
+  OTHER:
+    OTHER: replace
+
+OFFSET:
+  DATE_POSITIVE_BOUNDARY: 15
+  DATE_NEGATIVE_BOUNDARY: -14
+  AGE_POSITIVE_BOUNDARY: 3
+  AGE_NEGATIVE_BOUNDARY: -2

@@ -1,0 +1,60 @@
+PHI:
+  AGE:
+    AGE: keep
+  DATE:
+    DATE: shift
+    BIRTHDATE: shift
+  CONTACT:
+    PHONE: replace
+    FAX: replace
+    EMAIL: replace
+    URL: replace
+    IPADDRESS: replace
+  ID:
+    PATIENTID: replace
+    STUDYID: replace
+    OTHER: replace
+  LOCATION:
+    ORGANIZATION: replace
+    HOSPITAL: replace
+    STREET: replace
+    CITY: replace
+    ZIP: replace
+    COUNTRY: replace
+    STATE: replace
+    OTHER: replace
+  NAME:
+    PATIENT: replace
+    STAFF: replace
+    OTHER: replace
+  PROFESSION:
+    PROFESSION: replace
+    STATUS: replace
+  OTHER:
+    OTHER: replace
+
+OFFSET:
+  # Offset table must have the format: "patientid,timeoffset" -> timeoffset must be specified in miliseconds
+  TABLE_PATH: /path/to/offset_table
+  DATE_POSITIVE_BOUNDARY: 15
+  DATE_NEGATIVE_BOUNDARY: -14
+  AGE_POSITIVE_BOUNDARY: 3
+  AGE_NEGATIVE_BOUNDARY: -2
+
+RESULTS:
+  JSON_INPUT_PATH: /path/to/json_bundle
+  JSON_OUTPUT_PATH: /path/to/json_result
+  TXT_OUTPUT_PATH: /path/to/text_result
+
+INPUT:
+  FORMAT: cas
+  PATH: /path/to/cas
+  TS: /path/to/ts
+  # the filenames must have the structure "Patient:patientid_ResourceType:resourceid.dataending" for example "Patient:0a1a3cd_Observation:7d7bcb.xmi"
+  # the name of the resource type can be customized with this parameter
+  RESOURCE_TYPE: Observation
+
+NAMES:
+  MODEL: bert-base-multilingual-cased-ner-hrl_bert-base-multilingual-cased-ner-hrl
+  TOKENIZER: Davlan/bert-base-multilingual-cased-ner-hrl
+  DATASET: Dataset_Name
