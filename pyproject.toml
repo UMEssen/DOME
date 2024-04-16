@@ -9,7 +9,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.8"
-transformers = "^4.19.2"
+transformers = "^4.38.0"
 datasets = "2.2.2"
 dkpro-cassis = "^0.7.2"
 
