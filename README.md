@@ -30,7 +30,7 @@ These are the PHI categories and types that are annotated:
 |Profession|Status|Employment status
 |Other||PHI not covered by other types|
 
-We are planning to release fine-tuned models as well, we will update this page as soon as the models are publicly available. 
+We are planning to release fine-tuned models on pseudonymized data. We will update this page as soon as the models are publicly available. 
 
 ## Inference
 
