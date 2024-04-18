@@ -1,4 +1,12 @@
-# DOME - Deidentification of Medical Entities
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+
+  <a href="https://github.com/UMEssen/DOME">
+    <img src="images/DOME-header.png" alt="Logo">
+  </a>
+  <h1>Deidentification of Medical Entities</h1>
+</div>
 
 With the help of this framework, you can de-identify senstive data from your documents. It was developed at the University Hospital Essen by the [SHIP.AI team](https://ship-ai.ikim.nrw/).
 
