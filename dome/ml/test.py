@@ -9,18 +9,18 @@ import torch
 from cassis import Cas
 from tqdm import tqdm
 
-from deid_doc._version import __githash__, __gitversion__, __version__
-from deid_doc.ml.util import (
+from dome._version import __githash__, __gitversion__, __version__
+from dome.ml.util import (
     get_model_name_from_path,
     get_models_from_path,
     get_output_folder,
     prepare_dataset,
 )
-from deid_doc.util.cas_handling import add_label_without_clashes
-from deid_doc.util.constants import DOCUMENT_TYPE, MAIN_PHI_MAPPING, PHI_MAPPING
-from deid_doc.util.regex_collection import IMAGE_REGEX, POSTPROCESS_REGEX
-from deid_doc.util.token_classification import CustomTokenClassificationPipeline
-from deid_doc.util.util import check_intersection, get_study_name
+from dome.util.cas_handling import add_label_without_clashes
+from dome.util.constants import DOCUMENT_TYPE, MAIN_PHI_MAPPING, PHI_MAPPING
+from dome.util.regex_collection import IMAGE_REGEX, POSTPROCESS_REGEX
+from dome.util.token_classification import CustomTokenClassificationPipeline
+from dome.util.util import check_intersection, get_study_name
 
 logger = logging.getLogger(__name__)
 

@@ -4,8 +4,8 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from deid_doc.ml.test import test
-from deid_doc.ml.train import train
+from dome.ml.test import test
+from dome.ml.train import train
 
 
 def main() -> None:

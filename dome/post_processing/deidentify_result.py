@@ -8,11 +8,11 @@ import cassis
 import pandas as pd
 import yaml
 
-from deid_doc.pre_processing.current_data_splits import (
+from dome.pre_processing.current_data_splits import (
     convert_json_to_cas,
     create_annotations_from_cas,
 )
-from deid_doc.util.cas_handling import deidentify_cas
+from dome.util.cas_handling import deidentify_cas
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(

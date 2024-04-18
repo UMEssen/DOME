@@ -9,11 +9,11 @@ from cassis import Cas, TypeSystem
 from cassis.typesystem import TYPE_NAME_STRING
 from fhir_pyrate import Ahoy, Pirate
 
-from deid_doc.util.cas_handling import (
+from dome.util.cas_handling import (
     add_annotation_features,
     add_label_without_clashes,
 )
-from deid_doc.util.constants import (
+from dome.util.constants import (
     DOCUMENT_TYPE,
     MAIN_PHI_MAPPING,
     NAMED_ENTITY_CAS,
@@ -21,13 +21,12 @@ from deid_doc.util.constants import (
     PHI_MAPPING,
     UIMA_ANNOTATION,
 )
-from deid_doc.util.no_push_constants import MULTIPLE_DOCTORS, NAME_REGEX, PATIENT_REGEX
-from deid_doc.util.regex_collection import PATHO_REGEX
-from deid_doc.util.util import decode_base64, get_study_name
+from dome.util.regex_collection import PATHO_REGEX
+from dome.util.util import decode_base64, get_study_name
 
-SEARCH_URL = "https://shipdev.uk-essen.de/app/FHIR/r4"
-BASIC_AUTH = "https://shipdev.uk-essen.de/app/Auth/v1/basicAuth"
-REFRESH_AUTH = "https://shipdev.uk-essen.de/app/Auth/v1/refresh"
+SEARCH_URL = "https://fhir-search-url.com"
+BASIC_AUTH = "https://fhir-search-url.com/basicAuth"
+REFRESH_AUTH = "https://fhir-search-url.com/refresh"
 separator = "--"
 
 
@@ -174,9 +173,6 @@ def anonymize_message(
     cas = Cas(typesystem=typesystem)
     cas.sofa_string = message
     cas.sofa_mime = "text/plain"
-    new_patient_regex = return_matched_regex(
-        message, PATIENT_REGEX
-    ) or return_matched_regex(message, NAME_REGEX)
 
     current_regex = PATHO_REGEX.copy()
     if patient_regex is not None:
@@ -184,16 +180,6 @@ def anonymize_message(
             0,
             (
                 patient_regex,
-                MAIN_PHI_MAPPING["NAME_PHI_NAME"],
-                PHI_MAPPING["PATIENT_PHI_NAME"],
-                0,
-            ),
-        )
-    if new_patient_regex is not None:
-        current_regex.insert(
-            0,
-            (
-                new_patient_regex,
                 MAIN_PHI_MAPPING["NAME_PHI_NAME"],
                 PHI_MAPPING["PATIENT_PHI_NAME"],
                 0,
@@ -275,34 +261,16 @@ def anonymize_message(
             ):
                 current_label = PHI_MAPPING["BIRTHDATE_PHI_NAME"]
 
-            if regex == MULTIPLE_DOCTORS:
-                chosen_sep = ""
-                for sep in [", ", ",", "/", " und "]:
-                    if sep in match.group(3):
-                        chosen_sep = sep
-                        break
-                for doc in message[start:end].split(chosen_sep):
-                    add_label_without_clashes(
-                        cas=cas,
-                        main_class=general_label,
-                        specific_class=current_label,
-                        start=start + message[start:end].find(doc),
-                        end=start + message[start:end].find(doc) + len(doc),
-                        probability=1,
-                        source="patho-regex",
-                        always_update=True,
-                    )
-            else:
-                add_label_without_clashes(
-                    cas=cas,
-                    main_class=general_label,
-                    specific_class=current_label,
-                    start=start,
-                    end=end,
-                    probability=1,
-                    source="patho-regex",
-                    always_update=True,
-                )
+            add_label_without_clashes(
+                cas=cas,
+                main_class=general_label,
+                specific_class=current_label,
+                start=start,
+                end=end,
+                probability=1,
+                source="patho-regex",
+                always_update=True,
+            )
     return cas
 
 

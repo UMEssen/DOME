@@ -8,7 +8,7 @@ import cassis.typesystem
 from cassis import Cas, TypeSystem
 from cassis.typesystem import TYPE_NAME_FLOAT, TYPE_NAME_STRING
 
-from deid_doc.util.constants import (
+from dome.util.constants import (
     DAYS_WEEK,
     MAIN_PHI_MAPPING,
     NAMED_ENTITY_CAS,

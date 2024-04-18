@@ -1,4 +1,4 @@
-from deid_doc.util.constants import MAIN_PHI_MAPPING, PHI_MAPPING
+from dome.util.constants import MAIN_PHI_MAPPING, PHI_MAPPING
 
 IMAGE_REGEX = r"ima.*?([0-9]+)\/([0-9]+(\-[0-9]+)?)"
 

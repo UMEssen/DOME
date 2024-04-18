@@ -8,8 +8,8 @@ from pathlib import Path
 import cassis
 import yaml
 
-from deid_doc.ml.test import test
-from deid_doc.util.cas_handling import deidentify_cas
+from dome.ml.test import test
+from dome.util.cas_handling import deidentify_cas
 
 logger = logging.getLogger(__name__)
 

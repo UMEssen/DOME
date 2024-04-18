@@ -12,15 +12,14 @@ import pandas as pd
 from cassis import TypeSystem, load_cas_from_xmi
 from dotenv import load_dotenv
 
-from deid_doc.util.cas_handling import add_label_without_clashes, label_count
-from deid_doc.util.constants import NAMED_ENTITY_CAS, PHI_MAPPING
-from deid_doc.util.no_push_constants import DOCTOR_REGEX, DOCTOR_REGEX_2, fix_annotation
-from deid_doc.util.regex_collection import (
+from dome.util.cas_handling import add_label_without_clashes, label_count
+from dome.util.constants import NAMED_ENTITY_CAS, PHI_MAPPING
+from dome.util.regex_collection import (
     MELANOM_REDACT_REGEX,
     RADIO_REDACT_REGEX,
     SPLIT_DOC_REGEX,
 )
-from deid_doc.util.util import (
+from dome.util.util import (
     generate_pathology_cas_without_letterhead,
     get_study_name,
     transform_averbis_into_cas,
@@ -72,7 +71,7 @@ def split_radiology_data(
                     start, end = maybe_start, maybe_end
                 if label == PHI_MAPPING["STAFF_PHI_NAME"]:
                     # print(regex, row.text[start:end])
-                    for doc_regex in [DOCTOR_REGEX, DOCTOR_REGEX_2, SPLIT_DOC_REGEX]:
+                    for doc_regex in [SPLIT_DOC_REGEX]:
                         for sub_match in re.finditer(
                             string=row.text[start:end], pattern=doc_regex
                         ):
@@ -214,7 +213,6 @@ def convert_json_to_cas(
             cas = transform_averbis_into_cas(
                 doc["annotationDtos"],
                 type_system,
-                fix_annotation,
                 add_missing_annotations,
             )
             annotations.setdefault(patient_id, [])

@@ -16,8 +16,8 @@ from zipfile import ZipFile
 import cassis
 from tqdm import tqdm
 
-from deid_doc.util.cas_handling import get_entities_for_evaluation
-from deid_doc.util.constants import (
+from dome.util.cas_handling import get_entities_for_evaluation
+from dome.util.constants import (
     AGE_ENTITY,
     CONTACT_ENTITY,
     DATE_ENTITY,

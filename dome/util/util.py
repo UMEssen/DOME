@@ -8,16 +8,16 @@ import cassis
 from cassis import Cas, TypeSystem, typesystem
 from tqdm import tqdm
 
-from deid_doc.util.cas_handling import (
+from dome.util.cas_handling import (
     add_annotation_features,
     add_label_without_clashes,
 )
-from deid_doc.util.constants import (
+from dome.util.constants import (
     MAIN_PHI_MAPPING,
     NAMED_ENTITY_CAS,
     NAMED_ENTITY_TYPE,
 )
-from deid_doc.util.regex_collection import SKIP_STUDIES
+from dome.util.regex_collection import SKIP_STUDIES
 
 
 def get_study_name(

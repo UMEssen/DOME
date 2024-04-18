@@ -5,8 +5,8 @@ from pathlib import Path
 import cassis
 import pandas as pd
 
-from deid_doc.util.constants import PHI_VALUES_SUBCLASS
-from deid_doc.util.evaluation import get_documents, process_documents, strict_evaluation
+from dome.util.constants import PHI_VALUES_SUBCLASS
+from dome.util.evaluation import get_documents, process_documents, strict_evaluation
 
 
 def diff(a: str, b: str) -> str:

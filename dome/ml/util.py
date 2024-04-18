@@ -10,7 +10,7 @@ from transformers import (
     PreTrainedTokenizerFast,
 )
 
-from deid_doc.util.constants import PHI_VALUES_SUBCLASS, PHI_VALUES_SUPERCLASS
+from dome.util.constants import PHI_VALUES_SUBCLASS, PHI_VALUES_SUPERCLASS
 
 logger = logging.getLogger(__name__)
 
@@ -36,7 +36,7 @@ def prepare_dataset(dataset_info: Dict[str, Any]) -> datasets.DatasetDict:
 
     # TODO: I have put it here because I still have not found a way to specify the dataset config
     #  name later on
-    from deid_doc.util.ner_dataset import NERDataset
+    from dome.util.ner_dataset import NERDataset
 
     ds = NERDataset(
         name=dataset_info["DATASET_NAME"],

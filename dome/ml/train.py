@@ -18,7 +18,7 @@ from transformers.models.bert.tokenization_bert_fast import PreTrainedTokenizerF
 from transformers.tokenization_utils_base import BatchEncoding
 from transformers.trainer_utils import EvalPrediction
 
-from deid_doc.ml.util import (
+from dome.ml.util import (
     get_model_and_tokenizer_for_class,
     get_model_name_from_name,
     get_output_folder,

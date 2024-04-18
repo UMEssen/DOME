@@ -6,8 +6,8 @@ from typing import Any, Dict, Generator, List, Optional
 import cassis
 import datasets
 
-from deid_doc.util.cas_handling import generate_chunks
-from deid_doc.util.util import (
+from dome.util.cas_handling import generate_chunks
+from dome.util.util import (
     generate_pathology_cas_without_letterhead,
     valid_xml_char_ordinal,
 )
