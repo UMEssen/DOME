@@ -1,4 +1,4 @@
-# Deidentification Pipeline
+# DOME - Deidentification of Medical Entities
 
 With the help of this framework, you can de-identify senstive data from your documents. It was developed at the University Hospital Essen by the [SHIP.AI team](https://ship-ai.ikim.nrw/).
 
