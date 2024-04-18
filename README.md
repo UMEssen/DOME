@@ -42,7 +42,7 @@ You can build the docker image with
 
 ```bash
 bash generate_version.sh
-docker build -t ship-ai/deid-doc .
+docker build -t ship-ai/dome .
 ```
 
 ### Run docker image
@@ -59,9 +59,9 @@ docker run \
     --user $(id -u):$(id -g) \
     --shm-size=8g --ulimit memlock=-1 --ulimit stack=67108864 \
     --entrypoint /bin/sh \
-    ship-ai/deid-doc \
+    ship-ai/dome \
     -c \
-    "python -m deid_doc.cli --input-folder /input --output-folder /output --verbose"
+    "python -m dome.cli --input-folder /input --output-folder /output --verbose"
 ```
 ### Configuration
 The decision which PHI are removed, replaced or shifted are stored in the `config/default-config.yaml`. You can change these values for each PHI according to your needs. Allowed values are
@@ -77,7 +77,7 @@ The decision which PHI are removed, replaced or shifted are stored in the `confi
  For fine-tuning an transformer model on a clinical de-identification task, you need to make sure that you have an annotated dataset that is compatible with the UIMA Cas Typesystem defined in `config/TypeSystem.xml`. Also you need to set the correct path to your dataset in an environment file like in `env/train-example.env`. In this file you can also set hyperparameters used for training. After you correctly set all necessary environment variables, you can execute
 
 ```bash
- poetry run python -m deid_doc.bert \
+ poetry run python -m dome.bert \
                 --env envs/train_example.env
 ```
 
@@ -85,7 +85,7 @@ The decision which PHI are removed, replaced or shifted are stored in the `confi
 In order to evaluate the results of your model, there is a eval module in this framework. You can execute
 
 ```bash
-poetry run python -m deid_doc.eval \
+poetry run python -m dome.eval \
        --typesystem config/TypeSystem.xml \
        --ground-truth path_to/ground_truth \
        --prediction path_to/predictions \

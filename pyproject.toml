@@ -1,10 +1,10 @@
 [tool.poetry]
-name = "deid-doc"
+name = "DOME"
 version = "0.1.0"
 description = ""
 authors = ["Giulia Baldini <Giulia.Baldini@uk-essen.de>", "Kamyar Arzideh <Kamyar.Arzideh@uk-essen.de>"]
 packages = [
-    { include = "deid_doc" },
+    { include = "dome" },
 ]
 
 [tool.poetry.dependencies]

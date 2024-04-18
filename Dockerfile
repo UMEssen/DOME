@@ -31,4 +31,4 @@ COPY models /models
 COPY config/TypeSystem.xml /app/config/TypeSystem.xml
 COPY config/default-config.yaml /app/config/default-config.yaml
 
-COPY deid_doc /app/deid_doc
+COPY dome /app/dome
