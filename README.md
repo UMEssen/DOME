@@ -40,6 +40,8 @@ These are the PHI categories and types that are annotated:
 
 We are planning to release fine-tuned models on pseudonymized data. We will update this page as soon as the models are publicly available. 
 
+In its current form, this project serves as a blueprint for the de-identification of clinical documents. With the availability of fine-tuned models, other healthcare institions are able to use this repository for in-house de-identification.
+
 ## Inference
 
 ### Build docker image
