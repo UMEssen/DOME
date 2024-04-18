@@ -8,7 +8,7 @@
   <h1>Deidentification of Medical Entities</h1>
 </div>
 
-With the help of this framework, you can de-identify senstive data from your documents. It was developed at the University Hospital Essen by the [SHIP.AI team](https://ship-ai.ikim.nrw/).
+With the help of this framework, you can de-identify senstive data from your clinical documents. It was developed at the University Hospital Essen by the [SHIP.AI team](https://ship-ai.ikim.nrw/).
 
 These are the PHI categories and types that are annotated:
 
