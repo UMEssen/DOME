@@ -14,12 +14,14 @@ These are the PHI categories and types that are annotated:
 
 |PHI category|PHI type|Description|
 | -------  | -------| ------ |
-|Age | Age | Age in years
+|Age | Age | Age in years|
 |Contact|Email|Email address|
 |Contact|Fax | Fax number |
 |Contact|IPAddress|IP address|
 |Contact|Phone|Telephone number|
 |Contact|URL|URL of a webpage|
+|Date | Birthdate | Birthdate |
+|Date | Date | Date|
 |ID|PatientID|Medical record number or other patient identifier|
 |ID|StudyID|Study title or name of a study|
 |ID|Other|Other identification number|
