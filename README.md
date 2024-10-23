@@ -3,7 +3,7 @@
 <div align="center">
 
   <a href="https://github.com/UMEssen/DOME">
-    <img src="images/DOME-header.png" alt="Logo">
+    <img src="images/DOME-banner.png" alt="Logo">
   </a>
   <h1>Deidentification of Medical Entities</h1>
 </div>
