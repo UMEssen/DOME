@@ -2,6 +2,7 @@ FROM python:3.9 as poetry2requirements
 COPY pyproject.toml poetry.lock /
 ENV POETRY_HOME=/etc/poetry
 RUN pip3 install poetry
+RUN pip3 install poetry-plugin-export
 RUN python3 -m poetry export --without-hashes -f requirements.txt \
     | grep -v "torch=" \
     > /Requirements.txt
