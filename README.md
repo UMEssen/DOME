@@ -10,6 +10,10 @@
 
 With the help of this framework, you can de-identify senstive data from your clinical documents. It was developed at the University Hospital Essen by the [SHIP.AI team](https://ship-ai.ikim.nrw/).
 
+**If you use this package, please cite:**
+
+Arzideh, K., Baldini, G., Winnekens, P. et al. A Transformer-Based Pipeline for German Clinical Document De-Identification. Appl. Clin. Inform. 16, 031–043 (2025). [https://doi.org/10.1055/a-2424-1989](https://doi.org/10.1055/a-2424-1989).
+
 These are the PHI categories and types that are annotated:
 
 |PHI category|PHI type|Description|
